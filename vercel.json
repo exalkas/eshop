@@ -9,8 +9,7 @@
             }
         },
         {
-            "src": "client/package.json",
-            "use": "@vercel/next"
+            "src": "client/package.json"
         }
     ],
     "routes": [
