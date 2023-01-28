@@ -1,4 +1,6 @@
 const express = require('express')
+const cookieParser = require('cookie-parser')
+const cors = require('cors')
 const app = express()
 
 require('dotenv').config()
@@ -6,7 +8,14 @@ require('dotenv').config()
 const dbConnect = require('./config/db')
 dbConnect() // connects to db
 
+app.use(cors({
+    credentials: true,
+    origin: process.env.ORIGIN || '*'
+}))
+
+app.use(cookieParser())
 app.use(express.json()) // needed to parse the body of the request
+
 app.use('/users', require('./routes/userRoutes'))
 app.use('/products', require('./routes/productRoutes'))
 app.use('/categories', require('./routes/categoryRoutes'))
