@@ -1,18 +1,6 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "server/server.js",
-            "use": "@vercel/node",
-            "config": {
-                "engine": "18.x"
-            }
-        },
-        {
-            "src": "client/package.json",
-            "use": "@vercel/other"
-        }
-    ],
+
     "routes": [
         {
             "src": "^/users/(.*)",
